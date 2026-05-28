@@ -10,7 +10,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import Turnstile from "react-turnstile";
+import dynamic from "next/dynamic";
+
+const Turnstile = dynamic(
+  () => import("react-turnstile"),
+  {
+    ssr: false,
+  }
+);
 
 import {
   Select,
